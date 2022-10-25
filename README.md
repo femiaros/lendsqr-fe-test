@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# Lendsqr-fe-test Frontend App Readme-md
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Lendsqr Logo](https://img.shields.io/badge/License-MIT-yellow)
+![Lendsqr Logo](https://img.shields.io/badge/Documentation-Yes-brightgreen)
 
-## Available Scripts
+![Lendsqr Logo](/src/images/lendsqr-logo.png)
+[HOMEPAGE](https://oluwafemi-arowosegbe-lendsqr-fe-test.netlify.app/ "lendsqr-fe-test")
 
-In the project directory, you can run:
+## Prerequisites Knowlegde
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- JavaScript
+- HTML
+- CSS
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tools and Languages
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- ReactJS
+- SCSS
 
-### `npm run build`
+## Design
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+App comprises of 4 pages
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Login Page : Application user can sign in with valid email and any chosen password
 
-### `npm run eject`
+- Dashboard : App user is directed to the dashboard providing required authentication info
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  - Dashboard page displays the returned api users dummy informations
+  - Dashboard page also enables the mutating of the returned data
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- User Details Page : Displays detailed info of user in the dummy users api
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Page not found : To catch routes not existing in application
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Installation
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+_Command to be run in terminal >_
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+> npm install
 
-### Code Splitting
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+_Command to be run in terminal >_
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+> npm run start
 
-### Making a Progressive Web App
+## Run Test
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+_Command to be run in terminal >_
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+> npm run test
 
-### Deployment
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" width="30" height="30">
+<img src="src/images/Oluwafemi_Arowosegbe.png" height="25">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Email: [femiaros19@gmail.com](https://mail.google.com/)
+- Twitter: [@femi_frozee](https://twitter.com/femi_frozee)
+
+## Show your Support
+
+---
+
+Give a :star: if project was helpful
+
+## :page_facing_up: License
+
+---
+
+Copy &#169; 2022 Twitter: [Oluwafemi Arowosegbe]()
+
+Project is [MIT](https://opensource.org/licenses/MIT) licensed

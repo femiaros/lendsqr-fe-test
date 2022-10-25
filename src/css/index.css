@@ -1661,6 +1661,7 @@ a {
     max-width: 115px;
   }
   .Login__left-center {
+    opacity: 0.2;
     position: absolute;
     width: 269px;
     top: 70%;
@@ -1675,11 +1676,9 @@ a {
     top: 0;
     left: 0;
     width: 100%;
-    display: flex;
   }
   .Login__right-wrapper {
-    width: 340px;
-    top: 150px;
+    top: 140px;
   }
   .Login__right-wrapper h1 {
     font-size: 1.4em;

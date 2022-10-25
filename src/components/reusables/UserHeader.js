@@ -7,7 +7,7 @@ import {BsStarFill,BsStar} from 'react-icons/bs';
 const UserHeader = ({title,user}) => {
     const userID = user.id;
     //***required states && functions***
-    const{setAllUsersData,getUsersData,setPageUsersList,saveToStorage,getUserData} = useAuth();
+    const{getUsersData,saveToStorage,getUserData} = useAuth();
 
     const handleSwitchDetails = (e,num)=>{
         //target clicked link
@@ -103,10 +103,6 @@ const UserHeader = ({title,user}) => {
     }
 
     const pageReset =()=>{
-        setAllUsersData(getUsersData());
-        setPageUsersList(
-        getUsersData().filter((user,i)=> i<10)
-        );
         autoPageUp();
     }
 

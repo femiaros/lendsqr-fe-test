@@ -2,6 +2,7 @@ import UserHeader from "./reusables/UserHeader";
 import UserBody from "./reusables/UserBody";
 import { useParams} from "react-router-dom";
 import useAuth from '../hooks/useAuth';
+import autoPageUp from '../hooks/autoPageUp';
 import {useEffect} from "react";
 
 const User = () => {
@@ -12,7 +13,7 @@ const User = () => {
 
   useEffect(() => { 
     //when component loads hide search bar
-
+    autoPageUp()
     setShowSearchBar(false)  
   }, [])
 

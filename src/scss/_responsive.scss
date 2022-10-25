@@ -414,6 +414,8 @@
             }
 
             &-center {
+                // display: none;
+                opacity: .2;
                 position: absolute;
                 width: 269px;
                 top: 70%;
@@ -430,11 +432,10 @@
             top: 0;
             left: 0;
             width: 100%;
-            display: flex;
-
+            
             &-wrapper {
-                width: 340px;
-                top: 150px;
+                top: 140px;
+
                 h1{
                     font-size: 1.4em;
                 }

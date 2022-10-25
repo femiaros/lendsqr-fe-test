@@ -8,13 +8,14 @@ import {useEffect} from "react";
 
 const Dashboard = () => {
   //REQUIRED STATES
-  const{allUsersData,setPageUsersList,setShowSearchBar} = useAuth();
+  const{setPageUsersList,setShowSearchBar,setAllUsersData,getUsersData} = useAuth();
 
     useEffect(() => { //when component loads set default users display list
       setPageUsersList(
-        allUsersData.filter((user,i)=> i<10)
+        getUsersData().filter((user,i)=> i<10)
       )   
       setShowSearchBar(true)  
+      setAllUsersData(getUsersData());
     }, [])
 
   return (
