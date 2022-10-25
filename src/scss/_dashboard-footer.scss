@@ -1,0 +1,25 @@
+.DashboardFooter{
+    padding:20px 40px ;
+    @include flexPosition(row, center, space-between);
+    flex-wrap: wrap;
+
+    .Showing{
+        @include flexPosition(row, center, stretch);
+        gap: .5em;
+        font-size: .7em;
+        color: $text-color;
+
+        &__filter{
+            padding: .5em .7em;
+            border-radius: 3px;
+            background-color: #E5E8EE;
+            font-weight: weight(semibold);
+            
+            svg{
+                font-size: 1.1em;
+                margin-left: .4em;
+                transform: translateY(2px);
+            }
+        }
+    }
+}

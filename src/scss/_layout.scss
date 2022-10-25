@@ -1,0 +1,411 @@
+// ***Header scss starts***
+.Header{
+    overflow: hidden;
+    background-color: $primary-color;
+    box-shadow:0 0 7px #d2d2d2;
+    margin-bottom: 3px;
+    z-index: 10;  
+    position: relative;  
+
+    .menu-toggle{
+        position: absolute;
+        bottom: 25px;
+        left: 30px;
+        display: flex;
+        opacity: .7;
+        @include transition-ease;
+        pointer-events: none;
+        visibility: hidden;
+        @include media-lg {
+            visibility: visible;
+            cursor: pointer;
+            pointer-events: all;
+        }
+
+        &:hover{
+            opacity: 1;
+        }
+        &.open{
+            opacity: 1;
+            transform: rotate(360deg);
+        }
+        &.adjust{
+          bottom: 10px;
+        }
+        svg{
+            color: $text-color;
+            font-size: 1.6rem;
+            margin: auto;
+        }
+        .close-svg{
+            border-radius:4px;
+            border: 1px solid $text-color;
+            font-size: 1.7rem;
+        }
+    }
+
+    &__container{
+        height: 90px;
+        @include flexPosition(row, center, stretch);
+        padding: 30px 40px;
+    }
+    &__logo{
+        width: $nav-link-width;
+        .Lendsqr-logo{
+            max-width: 160px;
+        }
+    }
+    &__search{
+        position: relative;
+        // outline: solid 1px black;
+        width: 500px;
+        display: flex;
+        form{
+            margin: auto;
+            width: 400px;
+            @include flexPosition(row, center, stretch);
+            label{
+                position: absolute;
+                top: -250px;
+            }
+            input[type="text"]{
+                height: 40px;
+                padding: 10px;
+                font-size: 1rem;
+                color:$text-color2 ;
+                flex: 1;
+                background-color: transparent;
+                border-radius:0.4rem  0 0 0.4rem;
+                border: none;
+                outline: 2px solid #e4e8f4;
+                &:hover,
+                &:focus {
+                    outline: 2px solid $text-color2;
+                }
+                &::placeholder{
+                    color: #e4e8f4;
+                }
+            }
+            button{
+                border: none;
+                width: 56px;
+                height: 40px;
+                position: relative;
+                outline: 2px solid $text-color2;
+                background-color: $text-color2;
+                border-radius: 0 0.4rem 0.4rem 0;
+                @include transition-ease;
+
+                &:hover,
+                &:focus {
+                    background-color: #61dddd;
+                }
+                svg{
+                    color: $primary-color;
+                    font-size: 16px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+    }
+    &__info{
+        color: $text-color;
+        flex: 1;
+        @include flexPosition(row, center, flex-end);
+        gap: 40px;
+
+        .docs{
+            width: max-content;
+            font-size: 1rem;
+            text-decoration: underline;
+            cursor: pointer;
+            @include transition-ease;
+
+            &:hover,
+            &:focus {
+                color: $text-color2;
+            }
+        }
+        .alarm{
+            cursor: pointer;
+            width: max-content;
+            line-height: 6px;
+            svg{
+                font-size: 1.5rem;
+            }
+
+            @include transition-ease;
+
+            &:hover,
+            &:focus {
+                color: $text-color2;
+            }
+        }
+        .profile{
+            @include flexPosition(row, center, center);
+            gap: 7px;
+        
+            &-image{
+                width:48px;
+                height: 60px;
+                img{
+                    width: 100%;
+                    height: 50px;
+                    border-radius: 50%;
+                }
+            }
+            &-toggle{
+                position: relative;
+                width:max-content;
+                height: 60px;
+                @include flexPosition(column, center, center);
+                gap: 2px;
+
+                .profile-username{
+                    padding: 0 5px;
+                    cursor: pointer;
+                    @include flexPosition(row, center, stretch);
+
+                    @include transition-ease;
+                    
+                    &:hover,
+                    &:focus {
+                        color: $text-color2;
+                    }
+
+                    small{
+                        font-size: .8rem;
+                        font-weight: weight(bold);
+                    }
+                    svg{
+                        font-size: 1.5em;
+                        @include transition-ease;
+                        transform: rotate(-90deg);
+                    }
+                }
+                
+                .profile-logout{
+                    width: 53px;
+                    height: 0;
+                    @include flexPosition(row, center, center);
+                    background-color:$secondary-color;
+                    color: $text-color2;
+                    border-radius: .4em;
+                    pointer-events: none;
+                    position: absolute;
+                    top: 70%;
+                    font-size: .8rem;
+                    font-weight: weight(bold);
+                    text-align: center;
+                    text-transform: capitalize;
+                    overflow: hidden;
+                    @include transition-ease;
+                }
+
+                //when clicked upon add open class
+                &.open {
+                    .profile-username svg {
+                        transform: rotate(0);
+                    }
+                    .profile-logout {
+                        height: 21px;
+                        cursor: pointer;
+                        pointer-events: all;
+                    }
+                }
+            }
+        }
+    }
+}
+// ***Header scss ends***
+
+// ***Content scss starts***
+.Content {
+    position: relative;
+    background-color:$secondary-color;
+    @include flexPosition(row, stretch, stretch);
+
+    .Nav{
+        z-index: 3;
+        position: relative;
+        background-color: $primary-color;
+        color: $text-color;
+        height: 590px;
+        overflow-y: scroll;
+        @include transition-ease;
+
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+    
+        &::-webkit-scrollbar-track {
+            background-color: $bg-hover;
+        }
+    
+        &::-webkit-scrollbar-thumb {
+            background: linear-gradient(
+                rgba($text-blur, 0.4),
+                rgba($text-blur, 1));
+            border-radius: 5px;
+        }
+
+        &__container{
+            width: 100%;
+            padding:20px 0;
+            @include transition-ease;
+            @include flexPosition(column, center, center);
+            gap: 7px;
+        }
+        &__top{
+            text-transform: capitalize;
+            min-height: 80px;
+            @include flexPosition(column, stretch, space-between);
+            &__link{
+                cursor: pointer;
+                min-height: 40px;
+                width: $nav-link-width;
+                padding-left: 30px;
+                font-size: .85rem;
+                @include flexPosition(row, center, flex-start);
+                opacity: 1;
+
+                &.active,
+                &:hover,
+                &:focus{
+                    background-color: $bg-hover;
+                }
+
+                svg{
+                    margin-right: 4px;
+                    font-size: 1.2rem;
+                    pointer-events: none;
+                }
+                &-name{
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+                    small{
+                        font-size: .85rem;
+                        font-weight: weight(bold);
+                    }
+                    .icon {
+                        display: flex;
+                        @include transition-ease;
+                        svg{
+                            margin:auto ;
+                            font-size: .9rem;
+                        }
+                    }
+                }
+
+                &.open{
+                    animation: reaction .3s ease-in-out;
+
+                   .Nav__top__link-name .icon {
+                        transform: rotate(-90deg);
+                    }
+                    
+                }
+            }
+
+            &__list{
+                padding-left: 40px;
+                @include flexPosition(column, stretch, center);
+                @include transition-ease;
+                height: 0;
+                overflow: hidden;
+
+                &-item{
+                    position: relative;
+                    padding: 5px;
+                    opacity: .7;
+                    font-size: .8rem;
+                    cursor: pointer;
+
+                    &:hover,
+                    &:focus{
+                        opacity: 1;
+                        background-color: $bg-hover;
+                    }
+
+                    &::before{
+                        content:'.';
+                        position: absolute;
+                        left: -6px;
+                    }
+                }
+
+                &.open{
+                    height: 77px;
+                }
+            }
+        }
+        
+        &__category {
+            text-transform: capitalize;
+
+            &__title{
+                @include flexPosition(row,center,stretch);
+                min-height: 30px;
+                width: $nav-link-width;
+                padding-left: 30px;
+                font-size: .8rem;
+                font-weight: weight(bold);
+                text-transform: uppercase;
+            }
+            &__links{
+                @include flexPosition(column,stretch,center);
+                gap: 7px;
+            }
+            &__link{
+                cursor: pointer;
+                @include flexPosition(row,center,flex-start);
+                gap: 5px;
+                min-height: 35px;
+                padding-left: 30px;
+                font-size: .85rem;
+                list-style: none;
+                opacity: .7;
+
+                &.active,
+                &:hover,
+                &:focus{
+                    opacity: 1;
+                    background-color: $bg-hover;
+                }
+                svg{
+                    font-size: 1rem;
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+    main{
+        flex: 1;
+        height: 590px;
+        overflow-y: scroll;
+        background-color: $secondary-color;
+
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+    
+        &::-webkit-scrollbar-track {
+            background-color: $bg-hover;
+        }
+    
+        &::-webkit-scrollbar-thumb {
+            background: linear-gradient(rgba($text-blur, 0.4),
+                    rgba($text-blur, 1));
+            border-radius: 5px;
+        }
+
+        .User{
+            padding: 40px;
+        }
+    }
+}
+// ***Content scss ends***

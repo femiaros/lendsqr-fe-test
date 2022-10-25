@@ -1,0 +1,42 @@
+@function weight($weight-name){
+    @return map-get($font-weights, $weight-name)
+};
+
+@mixin transition-ease{
+    transition: all ease-in-out .4s;
+}
+@mixin little-fade{
+    box-shadow: 0 0 3px $text-blur;
+}
+@mixin flexPosition($direction,$align,$justify){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+};
+
+//media queries
+@mixin media-lg {
+    @media screen and (max-width:1000px){
+        @content;
+    }
+}
+
+@mixin media-md{
+    @media screen and (max-width:700px){
+        @content;
+    }
+}
+
+@mixin media-mobile{
+    @media screen and (max-width:500px){
+        @content;
+    }
+}
+
+//animations
+@keyframes reaction {
+    to {
+        transform: scaleY(1.02);
+    }
+}

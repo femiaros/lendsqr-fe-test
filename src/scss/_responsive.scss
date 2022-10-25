@@ -1,0 +1,753 @@
+//**queries** 
+@include media-lg{
+    .Login {
+
+        &__left {
+
+            &-wrapper {
+                padding-left: 1em;
+                .Lendsqr-logo {
+                    max-width: 150px;
+                }
+            }
+
+            &-center {
+
+                img {
+                    height: 300px;
+                }
+            }
+        }
+
+        &__right {
+            flex-basis: 50%;
+            background-color: $primary-color;
+            display: flex;
+
+            &-wrapper {
+                width: 350px;
+                h1{
+                    font-size:1.8em;
+                }
+                p {
+                    margin-bottom: 30px;
+                }
+
+                form {
+                    gap: 20px;
+
+                    .input-wrapper {
+                       
+
+                        input {
+                            padding: 9px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .Header{
+        &__container {
+            height: 100%;
+            padding:20px 30px;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        &__logo {
+            max-width: 230px;
+            .Lendsqr-logo {
+                max-width: 150px;
+            }
+        }
+        &__search {
+            order: 3;
+            flex-basis: 100%;
+            form {
+                width: 80%;
+
+                input[type="text"] {
+                    height: 36px;
+                    padding: 10px;
+                }
+            
+                button {
+                    width: 50px;
+                    height: 36px;
+                }
+            }
+
+        }
+    }
+
+    .Content {
+        background-color: $secondary-color;
+        min-height: calc(100vh - 103px);
+        @include flexPosition(row, stretch, stretch);
+
+        .Nav {
+            position: absolute;
+            left: -100%;
+            &.open{
+                left: 0;
+            }
+
+            &__top {
+
+                &__link {
+                    cursor: pointer;
+                    min-height: 37px;
+                    width: 200px;
+                    padding-left: 15px;
+                    font-size: .85rem;
+                    @include flexPosition(row, center, flex-start);
+                    opacity: .7;
+
+                    &.active,
+                    &:hover,
+                    &:focus {
+                        opacity: 1;
+                    }
+
+                    svg {
+                        margin-right: 4px;
+                        font-size: 1rem;
+                    }
+
+                    &-name {
+
+                        small {
+                            font-size: .8rem;
+                        }
+
+                        .icon {
+
+                            svg {
+                                margin: auto;
+                                font-size: .9rem;
+                            }
+                        }
+                    }
+                }
+
+                &__list {
+                    padding-left: 25px;
+
+                    &-item {
+                        font-size: .75rem;
+                        cursor: pointer;
+                    }
+                }
+            }
+            
+            &__category {
+
+                &__title {
+                    width: 200px;
+                    padding-left: 15px;
+                    font-size: .75rem;
+                }
+                &__links {
+                    gap: 5px;
+                }
+                &__link {
+                    min-height: 35px;
+                    padding-left: 15px;
+                    font-size: .8rem;
+
+                    svg {
+                        font-size: .81rem;
+                    }
+                }
+            }
+
+        }
+
+        main{
+
+        }
+    }
+}
+
+//screen less than 700px
+@include media-md{
+    .Login {
+
+        &__left {
+            flex-basis: 60%;
+            padding-top: 30px;
+            &-wrapper {
+                width: 90%;
+                padding-left: 1em;
+
+                .Lendsqr-logo {
+                    max-width: 130px;
+                    &__name {
+                        padding-top: 5px;
+                    }
+                }
+            }
+
+            &-center {
+                position: fixed;
+                width: 269px;
+                top: 30px;
+                right: 16px;
+                img {
+                    height: inherit;
+                }
+            }
+        }
+
+        &__right {
+            flex-basis: 40%;
+
+            &-wrapper {
+                position: fixed;
+                top: 200px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    .Header {
+        &__container {
+            padding: 20px;
+
+            .menu-toggle {
+                bottom: 28px;
+                left: 20px;
+            }
+        }
+
+        &__logo {
+            width: max-content;
+            .Lendsqr-logo {
+                max-width: 130px;
+            }
+        }
+
+        &__info {
+            @include flexPosition(row, center, space-around);
+            gap: 0;
+
+            .docs {
+                font-size: .85rem;
+            }
+
+            .alarm {
+                svg {
+                    font-size: 1.3rem;
+                }
+            }
+
+            .profile {
+                
+                &-image {
+                    width: 40px;
+                    height: 40px;
+                    img {
+                        width: 100%;
+                        height: 40px;
+                    }
+                }
+
+                &-toggle {
+                    height: 55px;
+
+                    .profile-username {
+
+                        small {
+                            font-size: .75rem;
+                        }
+                    }
+
+                    .profile-logout {
+                        font-size: .75rem;  
+                    }
+
+                }
+            }
+        }
+    }
+    .Content{
+        main {
+            .DashboardHeader{
+                padding: 20px 20px;
+
+                &__container{
+                    height: 175px;
+                }
+                &__title {
+                    font-size: 1.1rem;
+                }
+                &__stats__box {
+                    width: 170px;
+                    height: 120px;
+
+                    .icon {
+                        width: 34px;
+                        height: 34px;
+                
+                        svg {
+                            font-size:.9rem;
+                        }
+                    }
+                    .state{
+                        font-size: .65rem;
+                    } 
+                    .count{
+                        font-size: .9rem;
+                    }
+                }
+            }
+
+            .Users {
+                padding: 20px 20px;
+
+                &__container {
+                    margin: auto;
+                    padding: 8px;
+                }
+
+                &__table {
+                    border-collapse: collapse;
+                    width: 100%;
+
+
+                    thead tr {
+                        font-size: .8rem;
+                    }
+
+                    th,
+                    td {
+                        padding: 13px 10px;
+                    }
+
+                    tbody tr {
+                        &:last-of-type {
+                            border: none;
+                        }
+
+                        border-bottom: 1.5px solid #dddddd;
+                        font-size: .8rem;
+
+                        .more-menu {
+                            padding: 1.5em;
+                        }
+                    }
+                }
+            }
+
+            .DashboardFooter {
+                padding: 13px 20px 20px;
+                gap: 15px;
+
+                .Showing{
+                    order: 2;
+                }
+
+                .CoasterBtns{
+                    order: 1;
+                    margin: 0 auto;
+                }
+            }
+
+            .User {
+                padding: 20px;
+            }
+            .UserHeader {
+                // outline: solid 1px coral;
+
+                &__container {
+                    gap: 15px;
+                }
+
+                &__stats {
+
+                    &__wrapper {
+                        padding: 18px 13px;
+                        justify-content:flex-start ;
+                        flex-wrap: wrap;
+                        gap: 1em;
+                    }
+
+                    &__profile {
+                        gap: .6em;
+
+                        .profile-image {
+                            width: 67px;
+                            height: 67px;
+                        }
+                    }
+
+                }
+            }
+        }
+       
+    }
+}
+
+@include media-mobile {
+    .Login {
+        &__container {
+            position: relative;
+        }
+
+        &__left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding-top: 20px;
+
+            &-wrapper {
+                width: 100%;
+                padding-left: .9em;
+
+                .Lendsqr-logo {
+                    max-width: 115px;
+
+                }
+            }
+
+            &-center {
+                position: absolute;
+                width: 269px;
+                top: 70%;
+                right: 50%;
+                transform: translateX(50%);
+                img {
+                    height: inherit;
+                }
+            }
+        }
+
+        &__right {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+
+            &-wrapper {
+                width: 340px;
+                top: 150px;
+                h1{
+                    font-size: 1.4em;
+                }
+                p {
+                    margin-bottom: 20px;
+                }
+                            
+                form{
+
+                    .input-wrapper input {
+                        font-size: .9em;
+                        padding:10px 15px;
+                        outline: 1px solid #e4e8f4;
+                
+                        &:hover,
+                        &:focus {
+                            outline: 1px solid $text-color2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .Header {
+        &__container {
+            padding: 0  8px 10px;
+            min-height: 80px;
+            gap: 3px;
+
+            .menu-toggle {
+                bottom: 13px;
+                left: 6px;
+                svg{
+                    font-size: 1.6rem;
+                }
+                &.adjust {
+                    bottom: 5px;
+                }
+            }
+        }
+
+        &__logo {
+            width: max-content;
+
+            .Lendsqr-logo {
+                max-width: 90px;
+                gap: 4px;
+              
+                &__name {
+                    padding-top: 5px;
+                }
+            }
+        }
+
+        &__info {
+            .docs {
+                font-size: .75rem;
+            }
+        
+            .alarm {
+                svg {
+                    font-size: 1.2rem;
+                }
+            }
+            .profile {
+                
+                &-image {
+                    width: 35px;
+                    height: 35px;
+        
+                    img {
+                        width: 100%;
+                        height: 35px;
+                    }
+                }
+                &-toggle {
+                    .profile-username {
+
+                        small {
+                            font-size: .7rem;
+                        }
+                    }
+
+                    .profile-logout {
+                        height: 19;
+                        top:63%;
+                        font-size: .67rem;
+                    }
+                }
+            }
+        }
+
+        &__search {
+
+            form {
+                transform: translateX(15px);
+                width: 90%;
+
+                input[type="text"] {
+                    height: 33px;
+                    padding: 10px;
+                    font-size: .9rem;
+                    outline: 1px solid #e4e8f4;
+            
+                    &:hover,
+                    &:focus {
+                        outline: 1px solid $text-color2;
+                    }
+            
+                    &::placeholder {
+                        color: #ccd6f3;
+                    }
+                }
+            
+                button {
+                    width: 50px;
+                    height: 33px;
+                    outline: 1px solid $text-color2;
+                    svg {
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    .Content{
+        main {
+            
+            .DashboardHeader {
+                padding: 10px 6px 15px;
+
+                &__container {
+                    height: 160px;
+                    min-width: 600px;
+                }
+
+                &__title {
+                    font-size: 1.15rem;
+                }
+
+                &__stats__box {
+                    align-items: center;
+                    width: 130px;
+
+                    .icon {
+                        width: 30px;
+                        height: 30px;
+
+                        svg {
+                            font-size: .85rem;
+                        }
+                    }
+
+                    .state {
+                        font-size: .6rem;
+                    }
+
+                    .count {
+                        font-size: .8rem;
+                    }
+                }
+            }
+
+            .Users {
+                padding:20px 6px;
+                
+                &__container {
+                    margin: auto;
+                    // min-width: 800px;
+                    padding: 8px;
+                }
+
+                &__table {
+                    thead tr {
+                        font-size: .7rem;
+                        th svg {
+                            transform: translateY(2px);
+                            margin-left:0;
+                            font-size: 1.1em;  
+                        }
+                    }
+
+                    th,
+                    td {
+                        padding: 13px 8px;
+                    }
+
+                    tbody tr {
+
+                        border-bottom: 1px solid #dddddd;
+                        font-size: .65rem;
+
+                        .more-menu {
+                            right: -14px;
+                            width: 130px;
+                            padding: 1.2em;
+                        }
+                        .user-filter {
+                            width: 260px;
+                        }
+                        .user-filter__close {
+                            top: 10px;
+                            right: 15px;
+                        }
+                    }
+                }
+            }
+            .DashboardFooter {
+                padding: 13px 10px;
+            }
+
+            .User {
+                padding: 10px 6px;
+            }
+            
+            .UserHeader {
+
+                &__title {
+                    .title-title {
+                        font-size: 1.15em;
+                    }
+                    .title-controls {
+                        font-size: .55em;
+
+                        span {
+                            padding: .6em .8em;
+                            border-radius: .4em;
+                        }
+                    }
+                }
+
+                &__stats {
+
+                    &__wrapper {
+                        padding: 13px 8px;
+                        gap: .7em;
+                    }
+
+                    &__profile {
+                        padding-right: 2em;
+                        gap: .5em;
+
+                        .profile-image {
+                            width: 60px;
+                            height: 60px;
+                        }
+
+                        .profile-info {
+                            gap: 1px;
+
+                            .profile-name {
+                                font-size: .8em;
+                            }
+
+                            .profile-id {
+                                font-size: .7em;
+                            }
+                        }
+                    }
+
+                    &__tier {
+                        padding: 1em;
+
+                        h6 {
+                            font-size: .75em;
+                            margin-bottom: 3px;
+                        }
+
+                        .tier-icons {
+
+                            svg {
+                                font-size: .7em;
+                            }
+                        }
+                    }
+
+                    &__account {
+                        gap: 3px;
+                        padding-left: 0;
+
+                        .account-balance {
+                            font-size: .82em;
+
+                            small {
+                                font-size: .82em;
+                            }
+                        }
+
+                        .account-details {
+                            font-size: .65em;
+                        }
+                    }
+
+                    &__navdetails {
+
+                        .nav-wrapper {
+                            gap: 1em;
+
+                            .details-link {
+                                width: 100px;
+                                font-size: .75em;
+                            }
+                        }
+                    }
+                }
+            }
+            .UserBody {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    
+}

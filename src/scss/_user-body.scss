@@ -1,0 +1,91 @@
+.UserBody{
+    margin-top: 30px;
+    background-color: $primary-color;
+    border-radius: .4em;
+    @include little-fade;
+
+    &__container{
+        position: relative;
+    }
+    &__detail-Box{
+        border-radius: .4em;
+        color: $text-color;
+        background-color: $primary-color;
+        height: 0;
+        overflow: hidden;
+        padding: 15px;
+        display: none;
+        width: 100%;
+        @include transition-ease;
+        opacity: 0;
+        z-index: -2;
+
+        &.open {
+            display: block;
+            height: max-content;
+            opacity: 1;
+            z-index: 0;
+        }
+
+        &__field{
+            @include flexPosition(row, flex-start, stretch);
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #dddddd;
+        
+            &:last-of-type {
+                border: none;
+            }
+
+            .field-title{
+                flex-basis: 100%;
+                font-size: 1em;
+                font-weight: weight(medium);
+            }
+            .field-content{
+                flex: 1;
+                @include flexPosition(column, stretch, stretch);
+                gap: 20px;
+
+                &__item{
+                    
+                    &__title{
+                        display: block;
+                        font-size: .7em;
+                        font-weight: weight(medium);
+                        text-transform: uppercase;
+                        min-width: 158px;
+                        margin-bottom: 10px;
+                    }
+                    &__value{
+                        display: block;
+                        font-size: .85em;
+                        text-transform: capitalize;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+
+            &.personal {
+
+                .email {
+                    text-transform: lowercase;
+                }
+            }
+            &.guarantor{
+
+                .email {
+                    text-transform: lowercase;
+                }
+            }
+        }
+    }
+
+    #box2,#box3,#box4,#box5,#box6{
+        min-height: 300px;
+        font-size: 1em;
+        font-weight: weight(medium);
+    }
+    
+}

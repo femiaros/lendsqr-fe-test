@@ -1,0 +1,68 @@
+/* Coaster style starts */
+.CoasterBtns a,
+.CoasterBtns a:visited {
+    text-decoration: none;
+}
+
+.CoasterBtns {
+    position: relative;
+    width: 240px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.CoasterBtns .CoasterBtns__prev,
+.CoasterBtns .CoasterBtns__next {
+    background-color: #E5E8EE;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    cursor: pointer;
+    visibility: visible;
+    pointer-events: all;
+}
+.CoasterBtns svg{
+    color: $text-color;
+    font-size: .8em;
+}
+
+.CoasterBtns .hide-arrow{
+    visibility: hidden;
+    pointer-events: none;
+}
+.CoasterBtns .CoasterBtns__rail {
+    width: 180px;
+    height: 30px;
+    overflow: hidden;
+}
+
+.CoasterBtns .CoasterBtns__wrapper {
+    position: relative;
+    width: max-content;
+    height: 100%;
+    display: flex;
+    @include transition-ease;
+}
+
+.CoasterBtns .page {
+    color: $text-color;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    cursor: pointer;
+    font-size: .65em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &.active{
+        color:$text-color2;
+    }
+}
+
+/***Coaster style ends***/

@@ -1,0 +1,96 @@
+.DashboardHeader{
+    padding: 20px 40px;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+        height: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $secondary-color;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: linear-gradient(rgba($text-blur, 0.4),
+                rgba($text-blur, 1));
+        border-radius: 5px;
+    }
+    &__container{
+        @include flexPosition(column, stretch, space-between);
+        margin: auto;
+        min-width: 800px;
+        height: 190px;
+    }
+    &__title{
+        text-transform: capitalize;
+        font-size: 1.3rem;
+        font-weight: weight(bold);
+        padding: 10px 0;
+        color: $text-color;
+    }
+
+    &__stats{
+        @include flexPosition(row, stretch, space-between);
+        gap: 13px;
+
+        &__box{
+            background-color: $primary-color;
+            @include flexPosition(column, flex-start, space-between);
+            border-radius: .4em;
+            cursor: pointer;
+            padding: 13px;
+            width: 200px;
+            height: 140px;
+            border: 1px solid $primary-color;
+            box-shadow: 0 0 3px $text-blur;
+            @include transition-ease;
+
+            &:hover{
+                border: 1px solid $text-color2;
+            }
+
+            .icon{
+                width: 35px;
+                height: 35px;
+                background-color: #FEEFEC;
+                border-radius: 50%;
+                display: flex;
+
+                svg{
+                    margin: auto;
+                    color: #FF789A;
+                    font-size: 1rem;
+                }
+            }
+            .state{
+                font-size: .8rem;
+                text-transform: uppercase;
+                color: $text-color;
+            }
+            .count{
+                font-size: 1.1rem;
+                color: $text-color;
+                font-weight: weight(bold);
+            }
+        }
+
+        :nth-child(1){
+            .icon {
+                background-color: #FCE8FF;
+                svg {
+                    margin: auto;
+                    color: #EE80FF;
+                }
+            }
+        }
+        :nth-child(2){
+            .icon {
+                background-color: #EEE8FF;
+                svg {
+                    margin: auto;
+                    color: #7D4CFF;
+                }
+            }
+        }
+    }
+}

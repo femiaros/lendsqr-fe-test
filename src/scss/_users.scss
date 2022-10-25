@@ -1,0 +1,271 @@
+.Users{
+    padding: 20px 40px;
+    min-height: 300px;
+    overflow-x: scroll;
+    
+    &::-webkit-scrollbar {
+        height: 3px;
+        width: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $secondary-color;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: linear-gradient(rgba($text-blur, 0.4),
+                rgba($text-blur, 1));
+        border-radius: 5px;
+    }
+    
+    
+    &__container{
+        background-color: $primary-color;
+        border-radius: .4em;
+        margin: auto;
+        min-width: 1000px;
+        padding:13px 8px;
+        @include little-fade;
+    }
+    &__table{
+        border-collapse: collapse;
+        width: 100%;
+        
+
+        thead tr{
+            text-align: left;
+            font-size: .8rem;
+            color: $text-color;
+            font-weight: weight(bold);
+            text-transform: uppercase;
+
+            th{
+                svg{
+                    transform: translateY(1px);
+                    margin-left:3px;
+                    font-size: 1.1em;
+                }
+            }
+        }
+        th,td{
+            @include transition-ease;
+            padding: 15px 12px;
+
+            &:hover{
+                color: $text-color2;
+            }
+        }
+        tbody tr{
+            position: relative;
+            border-bottom: 2px solid #dddddd;
+            font-size: .77rem;
+            color: $text-color;
+            text-transform: capitalize;
+
+            &:last-of-type{
+                border: none;
+            }
+            .more,.organization-item,.username-item,.status-item{
+                cursor: pointer;
+            }
+            .email-item{
+                text-transform: lowercase;
+            } 
+            .more {
+                font-size: 1.1em;
+                @include transition-ease;
+
+                &:hover {
+                    background-color: $secondary-color;
+                }
+            }
+            td{
+                .indicator{
+                    font-size: .83em;
+                    padding: .4em .6em; 
+                    background-color: #F5F5F7;
+                    border-radius: .8em;
+
+                    &.active{
+                        background-color: #F3FCF6;
+                        color: #67D987;
+                    }
+                    &.blacklist{
+                        background-color: #FCE6EB;
+                        color: #F391A9;
+                    }
+                }
+            } 
+
+            .user-filter {
+                display: none;
+                position: relative;
+                background-color: $primary-color;
+                z-index: 2;
+                position: absolute;
+                top: 7px;
+                left: 10px;
+                width: 250px;
+                height: 0;
+                padding:20px 14px;
+                border-radius: .3em;
+                visibility: hidden;
+                pointer-events: none;
+                @include transition-ease;
+                @include little-fade;
+
+                &.open-filter {
+                    display: block;
+                    min-height: 460px;
+                    visibility: visible;
+                    pointer-events: all;
+                }
+                &__close{
+                    cursor: pointer;
+                    top: 18px;
+                    right: 15px;
+                    position: absolute;
+                    svg{
+                        font-size: 1.4em;
+                    }
+                }
+
+                form{
+                    // outline: solid 1px coral;
+                    .input-wrapper{
+                        margin-bottom: 15px;
+                        @include flexPosition(column, stretch, stretch);
+                        gap: .7em;
+                        
+
+                        label{
+                            color: $text-color;
+                            font-size: 1.1em;
+                            font-weight: weight(medium);
+                        }
+                        select,input{
+                            cursor: pointer;
+                            padding: 8px 10px;
+                            font-weight: weight(medium);
+                            font-size: 1.1em;
+                            color: $text-color2;
+                            border-radius: .5em;
+                            outline: none;
+                            border: .16em solid rgb(240, 240, 240);
+                            @include transition-ease;
+
+                            &:invalid {
+                                color: #ffffff;
+                            }
+                            &:hover,
+                            &:focus{
+                                border: .16em solid $text-color2;
+                            }
+
+                            &::placeholder{
+                                font-size: 1em;
+                                color: #b1b5b5;
+                            }  
+                        }
+
+                        select{
+                            &:invalid{
+                                color: #b1b5b5;
+                            }
+                            &:focus {
+                                border-radius: .5em .5em 0 0;
+                            }
+                            option {
+                                background-color: $secondary-color;
+                                color: $text-color2;
+                            }
+                        }
+                    }
+
+                    .btn-wrapper{
+                        @include flexPosition(row, center, space-between);
+
+                        input[type="reset"]{
+                            cursor: pointer;
+                            background-color: transparent;
+                            color:$text-color ;
+                            border: .16em solid $text-color;
+                            outline: none;
+                            border-radius: .5em;
+                            width: 100px;
+                            font-size: 1em;
+                            padding: 10px 0;
+                            @include transition-ease;
+
+                            &:hover,
+                            &:focus {
+                                border: .16em solid $text-color2;
+                            }
+                        }
+
+                        input[type="submit"]{
+                            cursor: pointer;
+                            background-color: $text-color2;
+                            color:$primary-color ;
+                            outline: none;
+                            border-radius: .5em;
+                            width: 100px;
+                            font-size: 1em;
+                            padding: 10px 0;
+                            border: .16em solid $text-color2;
+                            @include transition-ease;
+
+                            &:hover,
+                            &:focus {
+                                background-color: $text-color;
+                                border: .16em solid $text-color;
+                            }
+                        }
+                    }
+                }
+            }
+            .more-menu{
+                background-color: $primary-color;
+                z-index: 2;
+                position: absolute;
+                top:7px;
+                right: -20px;
+                width: 150px;
+                height: 0;
+                border-radius: .3em;
+                visibility: hidden;
+                pointer-events: none;
+                padding:1.3em;
+                overflow: hidden;
+                @include transition-ease;
+                @include little-fade;
+                @include flexPosition(column, stretch,center);
+                gap: 13px;
+
+                &.open-more{
+                    height: 120px;
+                    visibility: visible;
+                    pointer-events: all;
+                }
+
+                &-item{
+                    @include flexPosition(row, center,stretch);
+                    gap: 7px;
+                    font-size: .95em;
+                    @include transition-ease;
+                    font-weight: weight(semibold);
+                    cursor: pointer;
+
+                    &:hover {
+                        color: $text-color;
+                    }
+
+                    svg{
+                        font-size: 1.3em;
+                    }
+                }
+
+            }
+        }
+    }
+}

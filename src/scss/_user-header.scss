@@ -1,0 +1,207 @@
+.UserHeader{
+    // outline: solid 1px coral;
+
+    &__container{
+        @include flexPosition(column, stretch, stretch);
+        color: $text-color;
+        gap: 20px;
+
+        .back{
+            font-size: .73em;
+            @include flexPosition(row, center, stretch);
+            gap: .7em;
+            cursor: pointer;
+            width: max-content;
+            
+            svg{
+                font-size: 1.8em;
+                pointer-events: none;
+            }
+        }
+    }
+
+    &__title {
+        font-weight: weight(semibold);
+        @include flexPosition(row, center, space-between);
+
+        .title-title {
+            font-size: 1.2em;
+        }
+
+        .title-controls {
+            width: max-content;
+            @include flexPosition(row, center, stretch);
+            gap: 1em;
+            font-size: .68em;
+            text-transform: uppercase;
+
+            span{
+                padding:.7em 1em;
+                border-radius: .4em;
+                cursor: pointer;
+                @include transition-ease;
+                
+                &:hover {
+                    transform: scale(1.05);
+                }
+
+            }
+
+            .blacklist{
+                border: solid 1px #E9315F;
+                color: #E9315F;
+                &.action {
+                    border-color: lawngreen;
+                    color: lawngreen;
+                }
+            }
+            .activate{
+                border: solid 1px $text-color2;
+                color: $text-color2;
+
+                &.action {
+                    border-color: #E9315F;
+                    color: #E9315F;
+                }
+            }
+            
+        }
+    }
+
+    &__stats{
+        background-color: $primary-color;
+        border-radius: .4em;
+        @include little-fade;
+
+        &__wrapper{
+            padding: 20px 20px 30px;
+            @include flexPosition(row, center, stretch);
+        }
+            &__profile{
+                @include flexPosition(row, center, stretch);
+                padding-right: 2.5em;
+                gap: .6em;
+
+                .profile-image{
+                    width: 70px;
+                    height: 70px;
+                    overflow: hidden;
+                    border-radius: 50%;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .profile-info{
+                    @include flexPosition(column, flex-start, center);
+                    gap: 1px;
+
+                    .profile-name{
+                        font-size: 1em;
+                        font-weight: weight(medium);
+                        text-transform: capitalize;
+                    }
+                    .profile-id{
+                        font-size: .85em;
+                    }
+                }
+            }
+            &__tier{
+                border-left: solid 2px rgb(239, 239, 239);
+                border-right: solid 2px rgb(239, 239, 239);
+                padding: 1em;
+
+                h6{
+                    font-size: .75em;
+                    font-weight: weight(medium);
+                    margin-bottom: 3px;
+                }
+                .tier-icons{
+                    @include flexPosition(row, center, center);
+                    gap: 4px;
+                    color: #E9B200;
+                    svg{
+                        font-size: .8em;
+                    }
+                }
+            }
+            &__account{
+                flex: 1;
+                @include flexPosition(column, flex-start, center);
+                gap: 4px;
+                padding-left: 1em;
+                font-weight: weight(medium);
+
+                .account-balance{
+                    @include flexPosition(row, center, center);
+                    font-size: 1em;
+                    small{
+                        font-size: 1em;
+                        text-decoration: line-through;
+                    }  
+                }
+                .account-details{
+                    font-size: .7em;
+                }
+            }
+        &__navdetails{
+            overflow-x: scroll;
+
+            &::-webkit-scrollbar {
+                height: 0;
+            }
+        
+            &::-webkit-scrollbar-track {
+                background-color: $primary-color;
+            }
+        
+            &::-webkit-scrollbar-thumb {
+                background: linear-gradient(rgba($primary-color, 1),
+                        rgba($primary-color, 1));
+                border-radius: 5px;
+            }
+
+            .nav-wrapper{
+                height: 30px;
+                width: max-content;
+                @include flexPosition(row, center, center);
+                gap: .9em;
+                color: black;
+
+                .details-link{
+                    position: relative;
+                    width: 140px;
+                    padding-bottom: .5em;
+                    font-weight: weight(medium);
+                    font-size: .77em;
+                    text-align: center;
+                    text-transform: capitalize;
+                    @include transition-ease;
+                    overflow: hidden;
+                    cursor: pointer;
+
+                    &::before{
+                        @include transition-ease;
+                        position: absolute;
+                        border-radius: 5px;
+                        content: '';
+                        left: -100%;
+                        bottom: 0;
+                        height: 1.5px;
+                        width: 100%;
+                        background-color: $text-color2;
+                    }
+
+                    &.active{
+                        color: $text-color2;
+
+                        &::before {
+                            left: 0;
+                        }
+                    }
+                }
+            }
+        }    
+    }
+}

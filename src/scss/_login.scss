@@ -1,0 +1,140 @@
+.Login{
+    width: 100%;
+    font-family:$inter-family;
+
+    &__container{
+        display: flex;
+    }
+
+    &__left{
+        flex-basis: 50%;
+        height: 100vh;
+        padding-top: 60px;
+        background:linear-gradient(
+            to right,
+            rgba($secondary-color, 0.4),
+            rgba($secondary-color, 0.7)
+        ) ;
+        @include flexPosition(row, center, center);
+
+        &-wrapper{
+            padding-left: 2em;
+            max-width: 500px;
+            height: 100%;
+            // outline: solid black 1px;
+            @include flexPosition(column,stretch,flex-start);
+            
+            .Lendsqr-logo{
+                max-width: 165px;
+                margin-bottom: 120px;
+            }
+        }
+        &-center{
+            width: 90%;
+            img{
+                width: 100%;
+                display: inline-block;
+            }
+        }
+    }
+
+    &__right{
+        flex-basis: 50%;
+        background-color: $primary-color;
+        display: flex;
+
+        &-wrapper {
+            overflow: hidden;
+            padding:0 10px;
+            margin: auto;
+            width: 380px;
+            @include flexPosition(column, stretch, flex-start);
+            h1{
+                color: $text-color;
+                font-size: 2em;
+                margin-bottom: 10px;
+            }
+            p{
+                color: $text-color;
+                font-size: .9rem;
+                font-weight: weight(regular);
+                margin-bottom: 40px;
+            }
+            form{
+                position: relative;
+                
+                @include flexPosition(column, stretch, flex-start);
+                gap: 23px;
+
+                .input-wrapper{
+                    display: flex;
+                    position: relative;
+
+                    label {
+                        color: $text-color;
+                        font-size: 1rem;
+                        position: absolute;
+                        transform: translateX(1200px);
+                    }
+
+                    input{
+                        flex: 1;
+                        display: inline-block;
+                        font-size: 1rem;
+                        padding: 10px;
+                        border: none;
+                        border-radius: .3rem;
+                        color: $text-color2;
+                        background-color: transparent;
+                        outline: 2px solid #e4e8f4;
+
+                        &:hover,
+                        &:focus{
+                            outline: 2px solid $text-color2;
+                        }
+                    }
+
+                    .show-password {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        right: 15px;
+                        color: $text-color2;
+                        font-size: .8rem;
+                        font-weight: weight(bold);
+                        cursor: pointer;
+                    }
+                }
+                
+                .forgot-pwd{
+                    display: inline-block;
+                    & a{
+                        color: $text-color2;
+                        font-size: .8rem;
+                        text-transform: uppercase;
+                    }
+                    position: relative;
+                }
+                
+                button {
+                    display: inline-block;
+                    font-size: 1rem;
+                    padding: 10px;
+                    border: none;
+                    border-radius: .3rem;
+                    background-color: $text-color2;
+                    text-transform: uppercase;
+                    color: $primary-color;
+                    font-weight: weight(bold);
+                    cursor: pointer;
+                    @include transition-ease;
+
+                    &:hover{
+                        background-color: #61dddd;
+                        color:$secondary-color;
+                    }
+                }
+            }
+        }
+    }
+}
