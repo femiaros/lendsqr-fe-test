@@ -15,21 +15,22 @@ function App() {
 
   return (
     <Routes>
-        <Route path="/" element={<Login />} />
+      {/* public route */}
+      <Route path="/" element={<Login />} />
 
         <Route path="/" element={<Layout />} >
 
-          {/* public routes */}
+          {/* private routes */}
           <Route element={<RequireAuth />} >
-            <Route path="dashboard" element={<Dashboard  />} />
+            <Route path="/dashboard" element={<Dashboard  />} />
             <Route path="user/:id" element={<User  />} />
           </Route>
-
-
-          {/* catch all */}
-          <Route path="*" element={<Missing />} />
-          
+  
         </Route>
+
+      {/* catch all */}
+      <Route path="*" element={<Missing />} />  
+
     </Routes>
   );
 }

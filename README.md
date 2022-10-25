@@ -3,8 +3,10 @@
 ![Lendsqr Logo](https://img.shields.io/badge/License-MIT-yellow)
 ![Lendsqr Logo](https://img.shields.io/badge/Documentation-Yes-brightgreen)
 
-![Lendsqr Logo](/src/images/lendsqr-logo.png)
+![Lendsqr Logo](/src/images/lendsqr-logo1.png)
 [HOMEPAGE](https://oluwafemi-arowosegbe-lendsqr-fe-test.netlify.app/ "lendsqr-fe-test")
+
+![screencapture-lendsqr](https://user-images.githubusercontent.com/109704352/197831419-46c912ad-a263-4535-aa50-f193e6ce5fab.png)
 
 ## Prerequisites Knowlegde
 
@@ -27,7 +29,7 @@
 
 App comprises of 4 pages
 
-- Login Page : Application user can sign in with valid email and any chosen password
+- Login Page : sign in with valid email and any password of choice
 
 - Dashboard : App user is directed to the dashboard providing required authentication info
 
