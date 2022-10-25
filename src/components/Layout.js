@@ -322,10 +322,6 @@ const Layout = () => {
           </main>
             
         </div>
-
-        <footer className="Footer">
-           
-        </footer>
     </>
   )
 }
