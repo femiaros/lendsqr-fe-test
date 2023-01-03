@@ -4,7 +4,7 @@
 ![Lendsqr Logo](https://img.shields.io/badge/Documentation-Yes-brightgreen)
 
 ![Lendsqr Logo](/src/images/lendsqr-logo1.png)
-[HOMEPAGE](https://oluwafemi-arowosegbe-lendsqr-fe-test.netlify.app/ "lendsqr-fe-test")
+[LOGIN-PAGE](https://oluwafemi-arowosegbe-lendsqr-fe-test.netlify.app/ "lendsqr-fe-test")
 
 ![screencapture-lendsqr](https://user-images.githubusercontent.com/109704352/197831419-46c912ad-a263-4535-aa50-f193e6ce5fab.png)
 
@@ -29,14 +29,14 @@
 
 App comprises of 4 pages
 
-- Login Page : sign in with valid email and any password of choice
+- Login Page : Sign in with a valid email and any password of choice (JS validation)
 
-- Dashboard : App user is directed to the dashboard providing required authentication info
+- Dashboard Page: After providing required authentication info on **Login page**, the user is directed to the **dashboard**. User credentials are saved in a Auth State, and an admin role is issued to any user after a successful login. This admin-level-role allows a logged-in user, access all the pages of this mini app.
 
-  - Dashboard page displays the returned api users dummy informations
-  - Dashboard page also enables the mutating of the returned data
+  - Dashboard page displays the returned api dummy users informations.
+  - Dashboard page also provides the functionality that enables the mutating of the returned data.
 
-- User Details Page : Displays detailed info of user in the dummy users api
+- User Details Page : Displays detailed info of a particular dummy user returned from the api.
 
 - Page not found : To catch routes not existing in application
 

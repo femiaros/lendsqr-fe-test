@@ -8,7 +8,7 @@ const Login = () => {
     //required states
     const navigate = useNavigate();
     const location = useLocation();
-    // set location path to where user is coming from or if user is just logging in send user to home.
+    // set location path to where user is coming from or if user is just logging in send user to dashboard.
     const from = location.state?.from?.pathname || "/dashboard";
 
     const emailRef = useRef();

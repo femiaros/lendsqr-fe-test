@@ -1,5 +1,6 @@
 import RequireAuth from './components/RequireAuth'; //to protect routes
 import Layout from "./components/Layout";
+import DashLayout from "./components/DashLayout";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
 import User from "./components/User";
@@ -15,25 +16,30 @@ function App() {
 
   return (
     <Routes>
-      {/* public route */}
-      <Route path="/" element={<Login />} />
+      <Route path="/" element={<Layout />} >
 
-        <Route path="/" element={<Layout />} >
+        {/* public route */}
+        <Route index element={<Login />} />
 
-          {/* private routes */}
-          <Route element={<RequireAuth />} >
-            <Route path="/dashboard" element={<Dashboard  />} />
-            <Route path="user/:id" element={<User  />} />
+        {/* private routes */}
+        <Route element={<RequireAuth />} >
+
+          <Route path="dashboard" element={<DashLayout />} >
+              <Route index element={<Dashboard  />} />
           </Route>
-  
+
+          <Route path="user" element={<DashLayout />} >
+              <Route path=":id" element={<User  />} />
+          </Route>
+
         </Route>
 
-      {/* catch all */}
-      <Route path="*" element={<Missing />} />  
+        {/* catch all */}
+        <Route path="*" element={<Missing />} />  
 
+      </Route>
     </Routes>
   );
 }
 
 export default App;
-//npm i react-video-js-player :to install video player

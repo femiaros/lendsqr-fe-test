@@ -8,9 +8,9 @@ const RequireAuth = () => {
 
   return (
     auth?.admin 
-        ? <Outlet /> //protected page can only be accessed when user is logged in
-          :
-          <Navigate to='/' state={{from: location}} replace />
+      ? <Outlet /> //protected page can only be accessed when user is logged in
+        :
+        <Navigate to='/' state={{from: location}} replace />
         // Navigate helps to replace route-where user-with-no-access is coming from with '/' login-page-path, 
   );
 }
